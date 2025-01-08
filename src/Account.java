@@ -5,6 +5,7 @@ public class Account {
     private String number;
     private String owner;
     private Double summa;
+    private final Integer statusCode = 1;
 
     public Account(String number, String owner, Double summa) {
         this.number = number;
@@ -43,7 +44,7 @@ public class Account {
         this.summa = summa;
     }
 
-    public Boolean enoughMoney(Double moneySum){
+    private Boolean enoughMoney(Double moneySum){
         String accountNumber = getNumber();
         return (getSumma() - moneySum) >= 0;
     }
