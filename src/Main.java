@@ -5,17 +5,26 @@ public class Main {
             int numberClient = 10;
             double checkSum = 145.1;
             boolean required = true;
-            String nameClient = "Name";
+            String nameClient = "Alex";
+            String sonameClient = "Smith";
+            boolean nameClientsStartWithN;
+            String formatMessage = String.format("Моё имя %s , сумма на моём счету = %.2f", (nameClient + " " + sonameClient), checkSum);
 
             System.out.println(nameClient);
 
-            boolean nameClientsStartWithN = nameClient.startsWith("N");
+            nameClientsStartWithN = nameClient.startsWith("N");
 
             System.out.println(nameClientsStartWithN);
 
             String nameClientsUpper = nameClient.toUpperCase();
 
             System.out.println(nameClientsUpper);
+
+            System.out.println( nameClient + " " + sonameClient + ". checkSum: " + (checkSum + 102.4));
+
+            System.out.println(formatMessage);
+
+            System.out.println(formatMessage.replaceAll(nameClient, "Pit"));
 
     }
 }
