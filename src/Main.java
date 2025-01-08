@@ -9,5 +9,13 @@ public class Main {
 
             System.out.println(nameClient);
 
+            boolean nameClientsStartWithN = nameClient.startsWith("N");
+
+            System.out.println(nameClientsStartWithN);
+
+            String nameClientsUpper = nameClient.toUpperCase();
+
+            System.out.println(nameClientsUpper);
+
     }
 }
