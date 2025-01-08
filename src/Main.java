@@ -26,24 +26,41 @@ public class Main {
 //            System.out.println(formatMessage);
 //
 //            System.out.println(formatMessage.replaceAll(nameClient, "Pit"));
-            Double withdrawSub = 500.00;
-
-            Account account = new Account();
-            account.checkStatus();
-            account.setNumber("12343534523");
-            account.setSumma(1200.42);
-
+//            Double withdrawSub = 500.00;
+//
+//            Account account = new Account();
+//            account.checkStatus();
+//            account.setNumber("12343534523");
+//            account.setSumma(1200.42);
+//
 //            System.out.println(account.withdrawMoney(withdrawSub));
-
-            Account account2 = new Account();
-            account2.setNumber("5431123131");
+//
+//            Account account2 = new Account();
+//            account2.setNumber("5431123131");
 //            System.out.println(account2.getNumber());
+//
+//            Account account3 = new Account("999999", "Alex", 150000.00);
+//            System.out.println(account3.getNumber());
+//            System.out.println(account3.getOwner());
+//            System.out.println(account3.getSumma());
+//            account3.withdrawMoney(withdrawSub);
+//            System.out.println(account3.getSumma());
 
             Account account3 = new Account("999999", "Alex", 150000.00);
-            System.out.println(account3.getNumber());
-            System.out.println(account3.getOwner());
-            System.out.println(account3.getSumma());
-            account3.withdrawMoney(withdrawSub);
-            System.out.println(account3.getSumma());
+            Account account4 = new Account("999999", "Alex", 150000.00);
+
+            boolean isSame = account3.equals(account4);
+
+            boolean isNumberSame = account3.getNumber().equals(account4.getNumber());
+            boolean isOwnerSame = account3.getOwner().equals(account4.getOwner());
+
+            System.out.println(isNumberSame);
+            System.out.println(isOwnerSame);
+
+            System.out.println(account3);
+            System.out.println(account4);
+            System.out.println(isSame);
+
+
     }
 }

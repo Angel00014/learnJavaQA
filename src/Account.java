@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 public class Account {
 
@@ -14,6 +15,28 @@ public class Account {
     }
 
     public Account() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return Objects.equals(number, account.number) && Objects.equals(owner, account.owner) && Objects.equals(summa, account.summa) && Objects.equals(statusCode, account.statusCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, owner, summa, statusCode);
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "number='" + number + '\'' +
+                ", owner='" + owner + '\'' +
+                ", summa=" + summa +
+                ", statusCode=" + statusCode +
+                '}';
     }
 
     public void checkStatus(){
