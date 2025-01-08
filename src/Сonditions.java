@@ -36,4 +36,6 @@ public class Сonditions {
         System.out.println(carManufacturer);
 
     }
+
+
 }
