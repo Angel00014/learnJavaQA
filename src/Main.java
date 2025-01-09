@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -130,17 +128,49 @@ public class Main {
 //
 //            System.out.println(Arrays.asList(accounts));
 
-            List<CreditAccount> creditAccounts = getCreditAccounts();
-            List<CreditAccount> creditAccountsHighSum = new ArrayList<>();
+//            List<CreditAccount> creditAccounts = getCreditAccounts();
+//            List<CreditAccount> creditAccountsHighSum = new ArrayList<>();
+//
+//            for (CreditAccount creditAccount : creditAccounts) {
+//                    if (creditAccount.getSumma() > 2000.00) {
+//                            creditAccountsHighSum.add(creditAccount);
+//                    }
+//            }
+//
+//            System.out.println(creditAccountsHighSum);
 
-            for (CreditAccount creditAccount : creditAccounts) {
-                    if (creditAccount.getSumma() > 2000.00) {
-                            creditAccountsHighSum.add(creditAccount);
-                    }
-            }
+        List<String> originalNames = new ArrayList<String>() {{
+                add("John");
+                add("Kira");
+                add("John");
+                add("Alex");
+                add("Bob");
+                add("Mary");
+            }};
 
-            System.out.println(creditAccountsHighSum);
+        Set<String> names = new HashSet<>(originalNames);
 
+        System.out.println(names);
+
+        Map<String , Integer> people = new HashMap<>();
+        people.put(null, 90);
+        people.put("Alex", 27);
+        people.put("Bob", 15);
+        people.put("Alex", 50);
+        people.put(null, 27);
+
+        people.replace(null, 99);
+
+        System.out.println(people.get("Bob"));
+
+        for (Map.Entry<String, Integer> stringIntegerEntry : people.entrySet()) {
+                if (stringIntegerEntry.getKey().equals("Bob")) {
+                    System.out.println("Найден ключ " + stringIntegerEntry.getKey());
+                    break;
+                }
+        }
+
+        System.out.println(people);
 
     }
 }
