@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class StreamClassExample {
@@ -14,21 +15,40 @@ public class StreamClassExample {
             add(new CreditAccount("5456645", "Anna", 126.00, StatusAccount.BLOCKED));
         }};
 
-        List<CreditAccount> blockedAccounts = new ArrayList<>();
-
-        for (CreditAccount creditAccount : creditAccounts) {
-            if (creditAccount.getStatusAccountWithEnum().equals(StatusAccount.BLOCKED)){
-                blockedAccounts.add(creditAccount);
-            }
-        }
-
-        System.out.println(blockedAccounts);
+//        List<CreditAccount> blockedAccounts = new ArrayList<>();
+//
+//        for (CreditAccount creditAccount : creditAccounts) {
+//            if (creditAccount.getStatusAccountWithEnum().equals(StatusAccount.BLOCKED)){
+//                blockedAccounts.add(creditAccount);
+//            }
+//        }
+//
+//        System.out.println(blockedAccounts);
 
         List<CreditAccount> noActiveAccounts = creditAccounts.stream()
                 .filter(temp -> temp.getStatusAccountWithEnum().equals(StatusAccount.NO_ACTIVE))
                 .collect(Collectors.toList());
 
         System.out.println(noActiveAccounts);
+
+        List<String> onlyHighSum = creditAccounts.stream()
+                .filter(x->x.getSumma() > 2000.00)
+                .map(Account::getOwner)
+                .collect(Collectors.toList());
+        System.out.println(onlyHighSum);
+
+        CreditAccount lastAccounts = creditAccounts.get(creditAccounts.size() - 1);
+        CreditAccount lastAccountsStream = creditAccounts.stream().reduce((temp, next) -> next).get();
+
+        System.out.println(lastAccounts);
+        System.out.println(lastAccountsStream);
+
+        creditAccounts.stream()
+                .filter(x->x.getOwner().equals("Pit"))
+                .findFirst()
+                .orElseThrow(()-> new IllegalStateException("Владелец не найден"));
+
+
 
 
 
