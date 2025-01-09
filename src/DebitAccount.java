@@ -2,8 +2,8 @@ public class DebitAccount extends Account{
 
     private Double cashbackLevel;
 
-    public DebitAccount(String number, String owner, Double summa) {
-        super(number, owner, summa);
+    public DebitAccount(String number, String owner, Double summa, StatusAccount statusAccountWithEnum) {
+        super(number, owner, summa, statusAccountWithEnum);
     }
 
     @Override

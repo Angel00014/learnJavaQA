@@ -81,11 +81,13 @@ public class Main {
 
             CreditAccount[] accounts = new CreditAccount[5];
 
-            accounts[0] = new CreditAccount("5135687", "Alex", 12500.00);
-            accounts[1] = new CreditAccount("2342324", "Bob", 1250.00);
-            accounts[2] = new CreditAccount("7547564", "Dan", 542.05);
-            accounts[3] = new CreditAccount("1243241", "Mila", 9501.10);
-            accounts[4] = new CreditAccount("5456645", "Anna", 126.00);
+            accounts[0] = new CreditAccount("5135687", "Alex", 12500.00, StatusAccount.ACTIVE);
+            accounts[1] = new CreditAccount("2342324", "Bob", 1250.00, StatusAccount.ACTIVE);
+            accounts[2] = new CreditAccount("7547564", "Dan", 542.05, StatusAccount.ACTIVE);
+            accounts[3] = new CreditAccount("1243241", "Mila", 9501.10, StatusAccount.ACTIVE);
+            accounts[4] = new CreditAccount("5456645", "Anna", 126.00, StatusAccount.ACTIVE);
+
+            System.out.println(accounts[0].getStatusAccountWithEnum());
 
             System.out.println(Arrays.asList(accounts));
 

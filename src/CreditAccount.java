@@ -2,8 +2,8 @@ public class CreditAccount extends Account implements CheckFunctionality{
 
     private Double creditLimit = 0.00;
 
-    public CreditAccount(String number, String owner, Double summa){
-        super(number, owner, summa);
+    public CreditAccount(String number, String owner, Double summa, StatusAccount statusAccountWithEnum){
+        super(number, owner, summa, statusAccountWithEnum);
 
     }
 

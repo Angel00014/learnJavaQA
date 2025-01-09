@@ -7,11 +7,13 @@ public abstract class Account {
     private String owner;
     private Double summa;
     private final Integer statusCode = 1;
+    private StatusAccount statusAccountWithEnum;
 
-    public Account(String number, String owner, Double summa) {
+    public Account(String number, String owner, Double summa, StatusAccount statusAccountWithEnum) {
         this.number = number;
         this.owner = owner;
         this.summa = summa;
+        this.statusAccountWithEnum = statusAccountWithEnum;
     }
 
     public Account() {
@@ -63,6 +65,14 @@ public abstract class Account {
 
     public void setSumma(double summa) {
         this.summa = summa;
+    }
+
+    public StatusAccount getStatusAccountWithEnum() {
+        return statusAccountWithEnum;
+    }
+
+    public void setStatusAccountWithEnum(StatusAccount statusAccountWithEnum) {
+        this.statusAccountWithEnum = statusAccountWithEnum;
     }
 
     private Boolean enoughMoney(Double moneySum){
