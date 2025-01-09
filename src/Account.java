@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.Objects;
 
-public class Account {
+public abstract class Account {
 
     private String number;
     private String owner;
@@ -39,9 +39,7 @@ public class Account {
                 '}';
     }
 
-    public void checkStatus(){
-        System.out.println("Статус счёта");
-    }
+    public abstract void checkStatus();
 
     public String getNumber() {
         return number;
@@ -72,7 +70,7 @@ public class Account {
         return (getSumma() - moneySum) >= 0;
     }
 
-    public String withdrawMoney(Double moneySum){
+    public final String withdrawMoney(Double moneySum){
         boolean enoughMoney = enoughMoney(moneySum);
 
         if (enoughMoney){

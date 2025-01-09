@@ -46,20 +46,37 @@ public class Main {
 //            account3.withdrawMoney(withdrawSub);
 //            System.out.println(account3.getSumma());
 
-            Account account3 = new Account("999999", "Alex", 150000.00);
-            Account account4 = new Account("999999", "Alex", 150000.00);
+//            Account account3 = new Account("999999", "Alex", 150000.00);
+//            Account account4 = new Account("999999", "Alex", 150000.00);
+//
+//            boolean isSame = account3.equals(account4);
+//
+//            boolean isNumberSame = account3.getNumber().equals(account4.getNumber());
+//            boolean isOwnerSame = account3.getOwner().equals(account4.getOwner());
+//
+//            System.out.println(isNumberSame);
+//            System.out.println(isOwnerSame);
+//
+//            System.out.println(account3);
+//            System.out.println(account4);
+//            System.out.println(isSame);
 
-            boolean isSame = account3.equals(account4);
+            Double cashbackLevel = 2.0;
 
-            boolean isNumberSame = account3.getNumber().equals(account4.getNumber());
-            boolean isOwnerSame = account3.getOwner().equals(account4.getOwner());
+            CreditAccount account5 = new CreditAccount("999999", "Alex", 150000.00);
+            DebitAccount account6 = new DebitAccount("999999", "Alex", 150000.00);
 
-            System.out.println(isNumberSame);
-            System.out.println(isOwnerSame);
 
-            System.out.println(account3);
-            System.out.println(account4);
-            System.out.println(isSame);
+            System.out.println(account5.getCreditLimit());
+            account6.setCashbackLevel(cashbackLevel);
+            System.out.println(account6.getCashbackLevel());
+
+
+            account5.checkStatus();
+            account6.checkStatus();
+
+            account5.checkFunctionality();
+
 
 
     }
