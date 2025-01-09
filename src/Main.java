@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -61,22 +63,52 @@ public class Main {
 //            System.out.println(account4);
 //            System.out.println(isSame);
 
-            Double cashbackLevel = 2.0;
+//            Double cashbackLevel = 2.0;
+//
+//            CreditAccount account5 = new CreditAccount("999999", "Alex", 150000.00);
+//            DebitAccount account6 = new DebitAccount("999999", "Alex", 150000.00);
+//
+//
+//            System.out.println(account5.getCreditLimit());
+//            account6.setCashbackLevel(cashbackLevel);
+//            System.out.println(account6.getCashbackLevel());
+//
+//
+//            account5.checkStatus();
+//            account6.checkStatus();
+//
+//            account5.checkFunctionality();
 
-            CreditAccount account5 = new CreditAccount("999999", "Alex", 150000.00);
-            DebitAccount account6 = new DebitAccount("999999", "Alex", 150000.00);
+            CreditAccount[] accounts = new CreditAccount[5];
 
+            accounts[0] = new CreditAccount("5135687", "Alex", 12500.00);
+            accounts[1] = new CreditAccount("2342324", "Bob", 1250.00);
+            accounts[2] = new CreditAccount("7547564", "Dan", 542.05);
+            accounts[3] = new CreditAccount("1243241", "Mila", 9501.10);
+            accounts[4] = new CreditAccount("5456645", "Anna", 126.00);
 
-            System.out.println(account5.getCreditLimit());
-            account6.setCashbackLevel(cashbackLevel);
-            System.out.println(account6.getCashbackLevel());
+            System.out.println(Arrays.asList(accounts));
 
+            for (int i = 0; i < accounts.length; i++) {
+                    if (accounts[i].getOwner().equals("Dan")){
+                            CreditAccount tempSumma = accounts[i];
+                            tempSumma.setSumma(999999.00);
+                            break;
+                    }
 
-            account5.checkStatus();
-            account6.checkStatus();
+            }
 
-            account5.checkFunctionality();
+            System.out.println(Arrays.asList(accounts));
 
+            for (int i = accounts.length - 1; i >= 0; i--) {
+                    if (accounts[i].getOwner().equals("Anna")){
+                            CreditAccount tempSumma = accounts[i];
+                            tempSumma.setSumma(999999.00);
+                            break;
+                    }
+            }
+
+            System.out.println(Arrays.asList(accounts));
 
 
     }
