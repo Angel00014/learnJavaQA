@@ -1,9 +1,27 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
+    public static List<CreditAccount> getCreditAccounts(){
+            List<CreditAccount> creditAccounts = new ArrayList<CreditAccount>() {{
+                    add(new CreditAccount("5135687", "Alex", 12500.00, StatusAccount.ACTIVE));
+                    add(new CreditAccount("2342324", "Bob", 1250.00, StatusAccount.ACTIVE));
+                    add(new CreditAccount("7547564", "Dan", 542.05, StatusAccount.ACTIVE));
+                    add(new CreditAccount("1243241", "Mila", 9501.10, StatusAccount.ACTIVE));
+                    add(new CreditAccount("5456645", "Anna", 126.00, StatusAccount.ACTIVE));
+            }};
+
+            return creditAccounts;
+    }
+
+
     public static void main(String[] args) {
+
+
 //  Данные по предыдущим урокам
 //            int numberClient = 10;
 //            double checkSum = 145.1;
@@ -79,38 +97,49 @@ public class Main {
 //
 //            account5.checkFunctionality();
 
-            CreditAccount[] accounts = new CreditAccount[5];
+//            CreditAccount[] accounts = new CreditAccount[5];
+//
+//            accounts[0] = new CreditAccount("5135687", "Alex", 12500.00, StatusAccount.ACTIVE);
+//            accounts[1] = new CreditAccount("2342324", "Bob", 1250.00, StatusAccount.ACTIVE);
+//            accounts[2] = new CreditAccount("7547564", "Dan", 542.05, StatusAccount.ACTIVE);
+//            accounts[3] = new CreditAccount("1243241", "Mila", 9501.10, StatusAccount.ACTIVE);
+//            accounts[4] = new CreditAccount("5456645", "Anna", 126.00, StatusAccount.ACTIVE);
+//
+//            System.out.println(accounts[0].getStatusAccountWithEnum());
+//
+//            System.out.println(Arrays.asList(accounts));
+//
+//            for (int i = 0; i < accounts.length; i++) {
+//                    if (accounts[i].getOwner().equals("Dan")){
+//                            CreditAccount tempSumma = accounts[i];
+//                            tempSumma.setSumma(999999.00);
+//                            break;
+//                    }
+//
+//            }
+//
+//            System.out.println(Arrays.asList(accounts));
+//
+//            for (int i = accounts.length - 1; i >= 0; i--) {
+//                    if (accounts[i].getOwner().equals("Anna")){
+//                            CreditAccount tempSumma = accounts[i];
+//                            tempSumma.setSumma(999999.00);
+//                            break;
+//                    }
+//            }
+//
+//            System.out.println(Arrays.asList(accounts));
 
-            accounts[0] = new CreditAccount("5135687", "Alex", 12500.00, StatusAccount.ACTIVE);
-            accounts[1] = new CreditAccount("2342324", "Bob", 1250.00, StatusAccount.ACTIVE);
-            accounts[2] = new CreditAccount("7547564", "Dan", 542.05, StatusAccount.ACTIVE);
-            accounts[3] = new CreditAccount("1243241", "Mila", 9501.10, StatusAccount.ACTIVE);
-            accounts[4] = new CreditAccount("5456645", "Anna", 126.00, StatusAccount.ACTIVE);
+            List<CreditAccount> creditAccounts = getCreditAccounts();
+            List<CreditAccount> creditAccountsHighSum = new ArrayList<>();
 
-            System.out.println(accounts[0].getStatusAccountWithEnum());
-
-            System.out.println(Arrays.asList(accounts));
-
-            for (int i = 0; i < accounts.length; i++) {
-                    if (accounts[i].getOwner().equals("Dan")){
-                            CreditAccount tempSumma = accounts[i];
-                            tempSumma.setSumma(999999.00);
-                            break;
+            for (CreditAccount creditAccount : creditAccounts) {
+                    if (creditAccount.getSumma() > 2000.00) {
+                            creditAccountsHighSum.add(creditAccount);
                     }
-
             }
 
-            System.out.println(Arrays.asList(accounts));
-
-            for (int i = accounts.length - 1; i >= 0; i--) {
-                    if (accounts[i].getOwner().equals("Anna")){
-                            CreditAccount tempSumma = accounts[i];
-                            tempSumma.setSumma(999999.00);
-                            break;
-                    }
-            }
-
-            System.out.println(Arrays.asList(accounts));
+            System.out.println(creditAccountsHighSum);
 
 
     }
