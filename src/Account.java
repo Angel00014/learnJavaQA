@@ -38,6 +38,7 @@ public abstract class Account {
                 ", owner='" + owner + '\'' +
                 ", summa=" + summa +
                 ", statusCode=" + statusCode +
+                ", statusAccountWithEnum=" + statusAccountWithEnum +
                 '}';
     }
 

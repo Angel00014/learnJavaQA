@@ -139,38 +139,40 @@ public class Main {
 //
 //            System.out.println(creditAccountsHighSum);
 
-        List<String> originalNames = new ArrayList<String>() {{
-                add("John");
-                add("Kira");
-                add("John");
-                add("Alex");
-                add("Bob");
-                add("Mary");
-            }};
+//        List<String> originalNames = new ArrayList<String>() {{
+//                add("John");
+//                add("Kira");
+//                add("John");
+//                add("Alex");
+//                add("Bob");
+//                add("Mary");
+//            }};
+//
+//        Set<String> names = new HashSet<>(originalNames);
+//
+//        System.out.println(names);
+//
+//        Map<String , Integer> people = new HashMap<>();
+//        people.put(null, 90);
+//        people.put("Alex", 27);
+//        people.put("Bob", 15);
+//        people.put("Alex", 50);
+//        people.put(null, 27);
+//
+//        people.replace(null, 99);
+//
+//        System.out.println(people.get("Bob"));
+//
+//        for (Map.Entry<String, Integer> stringIntegerEntry : people.entrySet()) {
+//                if (stringIntegerEntry.getKey().equals("Bob")) {
+//                    System.out.println("Найден ключ " + stringIntegerEntry.getKey());
+//                    break;
+//                }
+//        }
+//
+//        System.out.println(people);
 
-        Set<String> names = new HashSet<>(originalNames);
 
-        System.out.println(names);
-
-        Map<String , Integer> people = new HashMap<>();
-        people.put(null, 90);
-        people.put("Alex", 27);
-        people.put("Bob", 15);
-        people.put("Alex", 50);
-        people.put(null, 27);
-
-        people.replace(null, 99);
-
-        System.out.println(people.get("Bob"));
-
-        for (Map.Entry<String, Integer> stringIntegerEntry : people.entrySet()) {
-                if (stringIntegerEntry.getKey().equals("Bob")) {
-                    System.out.println("Найден ключ " + stringIntegerEntry.getKey());
-                    break;
-                }
-        }
-
-        System.out.println(people);
 
     }
 }
