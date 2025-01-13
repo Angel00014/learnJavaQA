@@ -1,4 +1,6 @@
-public class CreditAccount extends Account implements CheckFunctionality{
+package account;
+
+public class CreditAccount extends Account implements CheckFunctionality {
 
     private Double creditLimit = 0.00;
 

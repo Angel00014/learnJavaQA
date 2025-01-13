@@ -1,4 +1,5 @@
-import java.text.DecimalFormat;
+package account;
+
 import java.util.Objects;
 
 public abstract class Account {
@@ -33,7 +34,7 @@ public abstract class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
+        return "account.Account{" +
                 "number='" + number + '\'' +
                 ", owner='" + owner + '\'' +
                 ", summa=" + summa +

@@ -5,38 +5,38 @@ public class StreamClassExample {
 
     public static void main(String[] args){
 
-//        List<CreditAccount> creditAccounts = new ArrayList<CreditAccount>(){{
-//            add(new CreditAccount("5135687", "Alex", 12500.00, StatusAccount.ACTIVE));
-//            add(new CreditAccount("2342324", "Bob", 1250.00, StatusAccount.NO_ACTIVE));
-//            add(new CreditAccount("7547564", "Dan", 542.05, StatusAccount.ACTIVE));
-//            add(new CreditAccount("1243241", "Mila", 9501.10, StatusAccount.ACTIVE));
-//            add(new CreditAccount("5456645", "Anna", 126.00, StatusAccount.BLOCKED));
+//        List<account.CreditAccount> creditAccounts = new ArrayList<account.CreditAccount>(){{
+//            add(new account.CreditAccount("5135687", "Alex", 12500.00, account.StatusAccount.ACTIVE));
+//            add(new account.CreditAccount("2342324", "Bob", 1250.00, account.StatusAccount.NO_ACTIVE));
+//            add(new account.CreditAccount("7547564", "Dan", 542.05, account.StatusAccount.ACTIVE));
+//            add(new account.CreditAccount("1243241", "Mila", 9501.10, account.StatusAccount.ACTIVE));
+//            add(new account.CreditAccount("5456645", "Anna", 126.00, account.StatusAccount.BLOCKED));
 //        }};
 
-//        List<CreditAccount> blockedAccounts = new ArrayList<>();
+//        List<account.CreditAccount> blockedAccounts = new ArrayList<>();
 //
-//        for (CreditAccount creditAccount : creditAccounts) {
-//            if (creditAccount.getStatusAccountWithEnum().equals(StatusAccount.BLOCKED)){
+//        for (account.CreditAccount creditAccount : creditAccounts) {
+//            if (creditAccount.getStatusAccountWithEnum().equals(account.StatusAccount.BLOCKED)){
 //                blockedAccounts.add(creditAccount);
 //            }
 //        }
 //
 //        System.out.println(blockedAccounts);
 
-//        List<CreditAccount> noActiveAccounts = creditAccounts.stream()
-//                .filter(temp -> temp.getStatusAccountWithEnum().equals(StatusAccount.NO_ACTIVE))
+//        List<account.CreditAccount> noActiveAccounts = creditAccounts.stream()
+//                .filter(temp -> temp.getStatusAccountWithEnum().equals(account.StatusAccount.NO_ACTIVE))
 //                .collect(Collectors.toList());
 //
 //        System.out.println(noActiveAccounts);
 //
 //        List<String> onlyHighSum = creditAccounts.stream()
 //                .filter(x->x.getSumma() > 2000.00)
-//                .map(Account::getOwner)
+//                .map(account.Account::getOwner)
 //                .collect(Collectors.toList());
 //        System.out.println(onlyHighSum);
 //
-//        CreditAccount lastAccounts = creditAccounts.get(creditAccounts.size() - 1);
-//        CreditAccount lastAccountsStream = creditAccounts.stream().reduce((temp, next) -> next).get();
+//        account.CreditAccount lastAccounts = creditAccounts.get(creditAccounts.size() - 1);
+//        account.CreditAccount lastAccountsStream = creditAccounts.stream().reduce((temp, next) -> next).get();
 //
 //        System.out.println(lastAccounts);
 //        System.out.println(lastAccountsStream);
