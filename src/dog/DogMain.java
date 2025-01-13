@@ -10,6 +10,8 @@ public class DogMain {
 
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
 
+
+        int countItemList = 30;
         int countYear = 5;
         int j = 1;
 
@@ -43,7 +45,6 @@ public class DogMain {
             add(new Foxec("Обыкновенная лисица №9", "Австралия", DogStatus.OLD));
             add(new Foxec("Обыкновенная лисица №10", "Австралия", DogStatus.OLD));
         }};
-
         List<Method> foxecsMethodList = new ArrayList<Method>();
         foxecsMethodList = Arrays.stream(Foxec.class.getMethods())
                 .filter(x->x.toString().startsWith("public void") && !x.toString().contains("set"))
@@ -61,11 +62,12 @@ public class DogMain {
             add(new Dogs("Самоедская собака", "Азия", DogStatus.OLD));
             add(new Dogs("Сибирская ездовая собака Сеппала", "Азия", DogStatus.OLD));
         }};
-
         List<Method> dogsMethodList = new ArrayList<Method>();
         dogsMethodList = Arrays.stream(Dogs.class.getMethods())
                 .filter(x->x.toString().startsWith("public void") && !x.toString().contains("set"))
                 .collect(Collectors.toList());
+
+
 
 
         for (int i = 0; i < countYear; i++) {
@@ -131,7 +133,32 @@ public class DogMain {
                 "Количество собак после = " + dogs.size()
         );
 
+    System.out.println(createRandomList(countItemList));
 
+
+    }
+
+    public static List<DogFamily> createRandomList(int listSize){
+        List<DogFamily> dogFamilyList = new ArrayList<>();
+        Random random = new Random();
+        int countDogs = 0;
+
+        for (int i = 0; i < listSize; i++) {
+            switch (random.nextInt(3)){
+                case 0:
+                    dogFamilyList.add(new Wolves("Cумчатый волк №" + countDogs++, DogCountry.getRandomCountry().toString(), DogStatus.OLD));
+                    break;
+                case 1:
+                    dogFamilyList.add(new Foxec("Обыкновенная лисица №" + countDogs++, DogCountry.getRandomCountry().toString(), DogStatus.OLD));
+                    break;
+                case 2:
+                    dogFamilyList.add(new Dogs("Среднеазиатская овчарка №" + countDogs++, DogCountry.getRandomCountry().toString(), DogStatus.OLD));
+                    break;
+            }
+
+        }
+
+        return dogFamilyList;
     }
 
 }
