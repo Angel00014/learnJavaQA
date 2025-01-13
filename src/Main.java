@@ -1,3 +1,4 @@
+import account.AccountWithParam;
 import account.CreditAccount;
 import account.StatusAccount;
 
@@ -7,17 +8,17 @@ import java.util.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
-    public static List<CreditAccount> getCreditAccounts(){
-            List<CreditAccount> creditAccounts = new ArrayList<CreditAccount>() {{
-                    add(new CreditAccount("5135687", "Alex", 12500.00, StatusAccount.ACTIVE));
-                    add(new CreditAccount("2342324", "Bob", 1250.00, StatusAccount.ACTIVE));
-                    add(new CreditAccount("7547564", "Dan", 542.05, StatusAccount.ACTIVE));
-                    add(new CreditAccount("1243241", "Mila", 9501.10, StatusAccount.ACTIVE));
-                    add(new CreditAccount("5456645", "Anna", 126.00, StatusAccount.ACTIVE));
-            }};
-
-            return creditAccounts;
-    }
+//    public static List<CreditAccount> getCreditAccounts(){
+//            List<CreditAccount> creditAccounts = new ArrayList<CreditAccount>() {{
+//                    add(new CreditAccount("5135687", "Alex", 12500.00, StatusAccount.ACTIVE));
+//                    add(new CreditAccount("2342324", "Bob", 1250.00, StatusAccount.ACTIVE));
+//                    add(new CreditAccount("7547564", "Dan", 542.05, StatusAccount.ACTIVE));
+//                    add(new CreditAccount("1243241", "Mila", 9501.10, StatusAccount.ACTIVE));
+//                    add(new CreditAccount("5456645", "Anna", 126.00, StatusAccount.ACTIVE));
+//            }};
+//
+//            return creditAccounts;
+//    }
 
 
     public static void main(String[] args) {
@@ -175,7 +176,43 @@ public class Main {
 //
 //        System.out.println(people);
 
+        AccountWithParam<String> accountWithParam = new AccountWithParam<>(
+                "5135687",
+                "Alex",
+                12500.00,
+                StatusAccount.ACTIVE,
+                "Абракадабра"
+        );
 
+        AccountWithParam<String> accountWithParam2 = new AccountWithParam<>(
+                "5135687",
+                "Alex",
+                12500.00,
+                StatusAccount.ACTIVE,
+                "Абракадабра"
+        );
+
+        AccountWithParam<String> accountWithParam3 = new AccountWithParam<>(
+                "5135687",
+                "Alex",
+                12500.00,
+                StatusAccount.ACTIVE,
+                "Абракадабра"
+        );
+
+        AccountWithParam<String> accountWithParam4 = new AccountWithParam<>(
+                "5135687",
+                "Alex",
+                12500.00,
+                StatusAccount.ACTIVE,
+                "Абракадабра"
+        );
+
+
+
+        accountWithParam.checkStatus();
+
+        System.out.println(AccountWithParam.getCounter());
 
     }
 }
