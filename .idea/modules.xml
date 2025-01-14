@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyProject.iml" filepath="$PROJECT_DIR$/MyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LearnProjectWithGradle.iml" filepath="$PROJECT_DIR$/LearnProjectWithGradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LearnProjectWithGradle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/LearnProjectWithGradle.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LearnProjectWithGradle.test.iml" filepath="$PROJECT_DIR$/.idea/modules/LearnProjectWithGradle.test.iml" />
     </modules>
   </component>
 </project>
