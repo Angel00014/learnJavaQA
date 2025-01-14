@@ -1,6 +1,12 @@
 package tests;
 
+import org.example.account.Account;
+import org.example.account.DebitAccount;
+import org.example.account.StatusAccount;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.Random;
 
@@ -37,7 +43,7 @@ public class SimpleTests {
 
 
     @Test
-    @Disabled("Params")
+    @Disabled("Требуется переписать")
     @DisplayName("Тест для проверки строки")
     public void testCompareString(){
         String myString = "Какая то строчка";
@@ -49,5 +55,19 @@ public class SimpleTests {
     public void afterTests(){
         System.out.println(param1);
         System.out.println(param2);
+    }
+
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/accounts.csv", delimiter = ',')
+    @DisplayName("Сравнение суммы на счетах клиентов с минимумом")
+    public void testWithParameter(String number, Double sum, String name){
+
+        DebitAccount account = new DebitAccount(number, name, sum, StatusAccount.ACTIVE);
+
+        System.out.println(account);
+
+        Assertions.assertTrue(account.getSumma() > 600);
+
     }
 }
