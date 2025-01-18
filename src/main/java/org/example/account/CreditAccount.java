@@ -4,9 +4,12 @@ public class CreditAccount extends Account implements CheckFunctionality {
 
     private Double creditLimit = 0.00;
 
-    public CreditAccount(String number, String owner, Double summa, StatusAccount statusAccountWithEnum){
+    public CreditAccount(String number, String owner, Double summa, StatusAccount statusAccountWithEnum, Double creditLimit) {
         super(number, owner, summa, statusAccountWithEnum);
+        this.creditLimit = creditLimit;
+    }
 
+    public CreditAccount() {
     }
 
     @Override

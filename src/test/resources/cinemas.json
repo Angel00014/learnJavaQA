@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Die Hard",
+    "annotation": "annotation Die Hard",
+    "reviews":[
+      {
+        "username": "Alex",
+        "textReview": "I like it",
+        "userRating": 9.1
+      },
+      {
+        "username": "Bob",
+        "textReview": "I hate this movie",
+        "userRating": 1.0
+      },
+      {
+        "username": "Alex",
+        "textReview": "Sometimes, I watch this film",
+        "userRating": 7.7
+      }
+    ]
+  },
+  {
+    "name": "Die Hard 2",
+    "annotation": "annotation Die Hard 2",
+    "reviews":[
+      {
+        "username": "Alex",
+        "textReview": "My favorite film",
+        "userRating": 10.0
+      }
+    ]
+  },
+  {
+    "name": "Die Hard 3",
+    "annotation": "annotation Die Hard 3",
+    "reviews":[]
+  }
+]

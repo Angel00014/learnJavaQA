@@ -1,13 +1,18 @@
 package tests;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.account.Account;
+import org.example.account.CreditAccount;
 import org.example.account.DebitAccount;
 import org.example.account.StatusAccount;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
+import utils.Helper;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 public class SimpleTests {
@@ -51,12 +56,6 @@ public class SimpleTests {
         Assertions.assertTrue(myString instanceof String);
     }
 
-    @AfterEach
-    public void afterTests(){
-        System.out.println(param1);
-        System.out.println(param2);
-    }
-
 
     @ParameterizedTest
     @CsvFileSource(resources = "/accounts.csv", delimiter = ',')
@@ -69,5 +68,28 @@ public class SimpleTests {
 
         Assertions.assertTrue(account.getSumma() > 600);
 
+    }
+
+    @Test
+    public void testReadJson() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        File jsonFile = new File("src/test/resources/account.json");
+
+        CreditAccount newCreditAccounts = objectMapper.readValue(jsonFile, CreditAccount.class);
+
+        System.out.println(newCreditAccounts.getOwner() + " " + newCreditAccounts.getSumma());
+
+        CreditAccount newCreditAccount2 = Helper.fromJson("src/test/resources/account.json", CreditAccount.class);
+        System.out.println(newCreditAccount2);
+
+        System.out.println(Helper.toJson(newCreditAccount2));
+
+
+    }
+
+    @AfterEach
+    public void afterTests(){
+        System.out.println(param1);
+        System.out.println(param2);
     }
 }
