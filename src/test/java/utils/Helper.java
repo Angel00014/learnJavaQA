@@ -2,9 +2,11 @@ package utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.SneakyThrows;
 
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class Helper {
@@ -12,13 +14,9 @@ public class Helper {
     private static final ObjectMapper mapper = new ObjectMapper();
 
 
-
-    public static <T> T fromJson(String urlPath, Class<T> className){
-        try {
+    @SneakyThrows
+    public static <T> T fromJson(String urlPath, Class<T> className) throws IOException {
            return mapper.readValue(new File(urlPath), className);
-        } catch (Exception e){
-            throw new RuntimeException(e);
-        }
     }
 
     public static <T> List<T> fromJsonList(File urlPath){

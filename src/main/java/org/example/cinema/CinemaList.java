@@ -1,7 +1,12 @@
 package org.example.cinema;
 
+import lombok.Builder;
+import lombok.Data;
+
 import java.util.List;
 
+@Builder
+@Data
 public class CinemaList {
 
     private String name;
