@@ -1,5 +1,8 @@
 package org.example.cinema;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 public class Reviews{
 
     private String username;
@@ -10,9 +13,6 @@ public class Reviews{
         this.username = username;
         this.textReview = textReview;
         this.userRating = userRating;
-    }
-
-    public Reviews() {
     }
 
     public String getUsername() {
