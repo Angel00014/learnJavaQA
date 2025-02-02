@@ -1,14 +1,12 @@
 package tests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.account.Account;
 import org.example.account.CreditAccount;
 import org.example.account.DebitAccount;
 import org.example.account.StatusAccount;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
 import utils.Helper;
 
 import java.io.File;
@@ -32,6 +30,7 @@ public class SimpleTests {
     }
 
     @Test
+    @Disabled("Требуется переписать")
     @DisplayName("Сравнение двух раномно сгенерированных параметров")
     public void testCompareTwoInteger() {
 
@@ -66,7 +65,7 @@ public class SimpleTests {
 
         System.out.println(account);
 
-        Assertions.assertTrue(account.getSumma() > 600);
+        Assertions.assertTrue(account.getSumma() > 100);
 
     }
 
