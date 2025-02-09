@@ -1,6 +1,6 @@
 package org.example;
 
-public class Сonditions {
+public class Conditions {
     public static void main(String[] args){
         int myAge = 18;
         boolean haveAutoRight = true;

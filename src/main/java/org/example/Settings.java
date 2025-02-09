@@ -1,6 +1,7 @@
 package org.example;
 
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +18,4 @@ public class Settings{
     @JsonProperty("url_service")
     private String UrlService;
 
-    public String getUrlService() {
-        return UrlService;
-    }
 }

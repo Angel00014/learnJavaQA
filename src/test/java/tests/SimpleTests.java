@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
+@Tag("simple")
 public class SimpleTests {
 
     private Integer param1;

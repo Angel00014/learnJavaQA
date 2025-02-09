@@ -6,6 +6,7 @@ import org.example.Settings;
 import org.example.cinema.CinemaList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import utils.Helper;
@@ -16,13 +17,30 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
+@Tag("cinema")
 public class CinemaTests {
 
     private List<CinemaList> cinemaList;
 
+    private Properties properties;
+
+    private Settings settings;
+
+    private FileInputStream file_properties;
+
+    private String json_properties;
+
 
     @BeforeEach
     public void getJson() throws IOException {
+
+        properties = new Properties();
+        file_properties = new FileInputStream("src/test/resources/cinema.properties");
+        properties.load(file_properties);
+        json_properties = Helper.toJson(properties);
+        settings = Helper.fromJson(json_properties, Settings.class);
+
+
         ObjectMapper objectMapper = new ObjectMapper();
         File jsonFile = new File("src/test/resources/cinemas.json");
 
@@ -60,9 +78,6 @@ public class CinemaTests {
     @Test
     public void testProperties() throws IOException {
 
-        Properties properties = new Properties();
-        FileInputStream file_properties = new FileInputStream("src/test/resources/cinema.properties");
-
         properties.load(file_properties);
         String url = properties.getProperty("url_service");
 
@@ -73,17 +88,23 @@ public class CinemaTests {
     @Test
     public void testPropertiesWithJackson() throws IOException {
 
-        Properties properties = new Properties();
-        FileInputStream file_properties = new FileInputStream("src/test/resources/cinema.properties");
         properties.load(file_properties);
 
         String json_properties = Helper.toJson(properties);
 
-
-
-        Settings settings = Helper.fromJson(json_properties, Settings.class);
+        settings = Helper.fromJson(json_properties, Settings.class);
 
         System.out.println(settings.getUrlService());
+
+    }
+
+    @Test
+    public void testForFailed(){
+
+        String yourUrl = "your_url";
+
+
+        Assertions.assertEquals(yourUrl, settings.getUrlService());
 
     }
 }
