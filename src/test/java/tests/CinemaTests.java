@@ -4,11 +4,10 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.Settings;
 import org.example.cinema.CinemaList;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.example.listener.RetryListener;
+import org.junit.jupiter.api.*;
 
+import org.junit.jupiter.api.extension.ExtendWith;
 import utils.Helper;
 
 import java.io.File;
@@ -18,6 +17,7 @@ import java.util.List;
 import java.util.Properties;
 
 @Tag("cinema")
+@ExtendWith(RetryListener.class)
 public class CinemaTests {
 
     private List<CinemaList> cinemaList;
@@ -28,16 +28,14 @@ public class CinemaTests {
 
     private FileInputStream file_properties;
 
-    private String json_properties;
-
 
     @BeforeEach
-    public void getJson() throws IOException {
+    public void getData() throws IOException {
 
         properties = new Properties();
         file_properties = new FileInputStream("src/test/resources/cinema.properties");
         properties.load(file_properties);
-        json_properties = Helper.toJson(properties);
+        String json_properties = Helper.toJson(properties);
         settings = Helper.fromJson(json_properties, Settings.class);
 
 
@@ -106,5 +104,11 @@ public class CinemaTests {
 
         Assertions.assertEquals(yourUrl, settings.getUrlService());
 
+    }
+
+
+    @AfterAll
+    public static void saveFailed() throws IOException {
+        RetryListener.saveResultToFile();
     }
 }

@@ -18,4 +18,7 @@ public class Settings{
     @JsonProperty("url_service")
     private String UrlService;
 
+    @JsonProperty("max_retries")
+    private int MaxRetries;
+
 }

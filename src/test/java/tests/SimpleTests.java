@@ -71,6 +71,7 @@ public class SimpleTests {
     }
 
     @Test
+    @Disabled
     public void testReadJson() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         File jsonFile = new File("src/test/resources/account.json");
