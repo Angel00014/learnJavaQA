@@ -1,2 +1,4 @@
 app:
   maxRetries: 3
+cost:
+  currentDiscount: 10.00

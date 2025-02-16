@@ -1,5 +1,6 @@
 package org.example.yamlConfig;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,8 +25,20 @@ public class YamlConfig {
     }
 
     @Data
+    @NoArgsConstructor
+    public static class CostConfig {
+        @JsonProperty("current_discount")
+        private double currentDiscount;
+
+        public CostConfig(double currentDiscount) {
+            this.currentDiscount = currentDiscount;
+        }
+    }
+
+    @Data
     public static class Config {
         private AppConfig app;
+        private CostConfig cost;
     }
 
     static {
@@ -44,6 +57,13 @@ public class YamlConfig {
             throw new RuntimeException("Конфигурация не была загружена или отсутствует поле 'app'.");
         }
         return config.getApp().getMaxRetries();
+    }
+
+    public static double getCurrentDiscount() {
+        if (config == null || config.getCost() == null) {
+            throw new RuntimeException("Конфигурация не была загружена или отсутствует поле 'cost'.");
+        }
+        return config.getCost().getCurrentDiscount();
     }
 
 }
