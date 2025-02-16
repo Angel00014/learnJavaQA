@@ -19,6 +19,7 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.30'
     implementation 'org.yaml:snakeyaml:2.3'
     implementation 'commons-io:commons-io:2.18.0'
+    implementation 'org.testng:testng:6.14.3'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
@@ -28,7 +29,16 @@ dependencies {
     testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
     testImplementation 'org.yaml:snakeyaml:2.3'
 
+    testImplementation 'org.testng:testng:6.14.3'
+
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+}
+
+tasks.register("testNGRun", Test.class){
+    useTestNG()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
 test {
