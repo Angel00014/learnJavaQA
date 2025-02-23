@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SuiteNGTests">
+    <listeners>
+        <listener class-name="org.example.listener.RetryTransformerListenerTestNG"/>
+    </listeners>
+    <test name="Fail3Tests">
+        <groups>
+            <run>
+                <include name="fail3"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.NGTests"></class>
+        </classes>
+    </test>
+</suite>

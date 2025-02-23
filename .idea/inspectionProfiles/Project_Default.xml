@@ -9,5 +9,16 @@
         </list>
       </option>
     </inspection_tool>
+    <inspection_tool class="groupsTestNG" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="groups">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="Fail1" />
+            <item index="1" class="java.lang.String" itemvalue="Fail2" />
+            <item index="2" class="java.lang.String" itemvalue="fail2" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
   </profile>
 </component>

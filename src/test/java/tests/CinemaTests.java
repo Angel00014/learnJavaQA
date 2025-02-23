@@ -97,6 +97,7 @@ public class CinemaTests {
     }
 
     @Test
+    @Disabled
     public void testForFailed(){
 
         String yourUrl = "your_url";
