@@ -5,17 +5,20 @@ import org.example.yamlConfig.YamlConfig;
 import org.testng.*;
 import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
+import java.io.IOException;
+
+
+@Listeners(RetryListenerTestNG.class)
 public class NGTests {
 
-//    @BeforeSuite(groups = {"fail3"})
-//    public void beforeTests(ITestContext context){
-//        for (ITestNGMethod testMethod : context.getAllTestMethods()) {
-//            testMethod.setRetryAnalyzer(new RetryListenerTestNG());
-//        }
-//    }
+    @BeforeSuite(groups = {"fail3"})
+    public void beforeTests(ITestContext context){
+        for (ITestNGMethod testMethod : context.getAllTestMethods()) {
+            testMethod.setRetryAnalyzer(new RetryListenerTestNG());
+        }
+    }
 
 
     @Test
@@ -34,6 +37,11 @@ public class NGTests {
         Assert.assertTrue(currentDiscount < 0);
         Assert.assertTrue(currentDiscount >= 100);
 
+    }
+
+    @AfterSuite
+    public void saveFailed() throws IOException {
+        RetryListenerTestNG.saveResultToFile();
     }
 
 }
