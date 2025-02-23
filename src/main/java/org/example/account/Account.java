@@ -1,11 +1,15 @@
 package org.example.account;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public abstract class Account {
 
     private String number;
     private String owner;
+
+    @JsonProperty("summa")
     private Double summa;
     private final Integer statusCode = 1;
     private StatusAccount statusAccountWithEnum;

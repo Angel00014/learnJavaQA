@@ -1,5 +1,10 @@
 package org.example.account;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class DebitAccount extends Account{
 
     private Double cashbackLevel;
@@ -9,15 +14,28 @@ public class DebitAccount extends Account{
     }
 
     @Override
+    public Double getSumma() {
+        return super.getSumma();
+    }
+
+    @Override
+    public String getOwner() {
+        return super.getOwner();
+    }
+
+    @Override
+    public String getNumber() {
+        return super.getNumber();
+    }
+
+    @Override
+    public StatusAccount getStatusAccountWithEnum() {
+        return super.getStatusAccountWithEnum();
+    }
+
+    @Override
     public void checkStatus() {
         System.out.println("Показать статус дебетового счёта");
     }
 
-    public Double getCashbackLevel() {
-        return cashbackLevel;
-    }
-
-    public void setCashbackLevel(Double cashbackLevel) {
-        this.cashbackLevel = cashbackLevel;
-    }
 }

@@ -1,28 +1,21 @@
 package org.example.account;
 
+import lombok.*;
+
+@Data
+@NoArgsConstructor
 public class CreditAccount extends Account implements CheckFunctionality {
 
     private Double creditLimit = 0.00;
 
-    public CreditAccount(String number, String owner, Double summa, StatusAccount statusAccountWithEnum, Double creditLimit) {
+    public CreditAccount(Double summa, String number, String owner,  StatusAccount statusAccountWithEnum, Double creditLimit) {
         super(number, owner, summa, statusAccountWithEnum);
         this.creditLimit = creditLimit;
-    }
-
-    public CreditAccount() {
     }
 
     @Override
     public void checkStatus() {
         System.out.println("Показать статус кредитного счёта");
-    }
-
-    public Double getCreditLimit() {
-        return creditLimit;
-    }
-
-    public void setCreditLimit(Double creditLimit) {
-        this.creditLimit = creditLimit;
     }
 
     public void checkLimit(){

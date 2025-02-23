@@ -1,2 +1,3 @@
-1412412412, 12244.00, Alex
-623214213, 520.12, Bob
+number,summa,owner,statusAccountWithEnum
+12244.55,1412412412,Alex,ACTIVE
+520.12,623214213,Bob,ACTIVE
